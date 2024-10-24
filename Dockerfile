@@ -2,7 +2,7 @@
 FROM node:20-alpine
 
 # Step 2: Set the working directory
-WORKDIR /Bhamra_Rupinderjit_ui_garden
+WORKDIR /Bhamra_Rupinderjit_ui_garden_build_checks
 
 # Step 3: Copy package.json
 COPY package*.json ./
@@ -20,7 +20,7 @@ RUN npm run build-storybook
 RUN npm install -g http-server
 
 # Step 8: Expose the port provided in learn
-EXPOSE 8083
+EXPOSE 8018
 
-# Step 9: Serve the build on port 8083
-CMD ["http-server", "storybook-static", "-p", "8083"]
+# Step 9: Serve the build on port 8018
+CMD ["http-server", "storybook-static", "-p", "8018"]

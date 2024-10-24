@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import { TableProps } from './Table.types';
+import React from "react";
+import styled from "styled-components";
+import { TableProps } from "./Table.types";
 
 const TableContainer = styled.div`
   width: 100%;
@@ -8,16 +8,24 @@ const TableContainer = styled.div`
 `;
 
 const StyledTable = styled.table.withConfig({
-  shouldForwardProp: (prop) => !['backgroundColor', 'borderColor', 'textColor', 'disabled'].includes(prop),
-})<{ backgroundColor: string; borderColor: string; textColor: string; disabled: boolean }>`
+  shouldForwardProp: (prop) =>
+    !["backgroundColor", "borderColor", "textColor", "disabled"].includes(prop),
+})<{
+  backgroundColor: string;
+  borderColor: string;
+  textColor: string;
+  disabled: boolean;
+}>`
   width: 100%;
   border-collapse: collapse;
-  background-color: ${({ backgroundColor, disabled }) => (disabled ? 'darkGray' : backgroundColor)};
+  background-color: ${({ backgroundColor, disabled }) =>
+    disabled ? "rgb(169, 169, 169)" : backgroundColor};
   color: ${({ textColor }) => textColor};
   opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
   border-radius: 8px;
 
-  td, th {
+  td,
+  th {
     border: 1px solid ${({ borderColor }) => borderColor};
     padding: 8px;
     text-align: left;
@@ -27,10 +35,11 @@ const StyledTable = styled.table.withConfig({
 
 export const Table: React.FC<TableProps> = ({
   children,
-  backgroundColor = '#ffffff',
-  borderColor = '#cccccc',
-  textColor = '#000000',
+  backgroundColor = "#ffffff",
+  borderColor = "#cccccc",
+  textColor = "#000000",
   disabled = false,
+  ...props
 }) => {
   return (
     <TableContainer>
@@ -39,6 +48,8 @@ export const Table: React.FC<TableProps> = ({
         borderColor={borderColor}
         textColor={textColor}
         disabled={disabled}
+        data-testid="table"
+        {...props}
       >
         {children}
       </StyledTable>

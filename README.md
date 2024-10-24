@@ -1,6 +1,6 @@
-# Coding Assignment 12 - React Web Component Library
+# Coding Assignment 13 - UC Component Library 
 
-This project is a **React web component library** built using **Storybook**. It contains reusable UI components that you can easily develop, test, and document. These components are meant to be used in real-world React applications. They are flexible and help keep your projects consistent and easy to maintain.
+This project is a **React web component library** built using **Storybook**. It contains reusable UI components that you can easily develop, test, and document. These components are meant to be used in real-world React applications. They are flexible and help keep your projects consistent and easy to maintain. Additionally, this project uses husky to run pre-commit checks.
 
 ## Components Overview
 
@@ -18,7 +18,7 @@ The project includes the following React components:
 
 ## Getting Started
 
-To get the project running locally on `localhost:8083`, follow the steps below.
+To get the project running locally on `localhost:8018`, follow the steps below.
 
 ### Prerequisites
 
@@ -34,7 +34,7 @@ Make sure you have:
    Pull the project repository:
 
    ```bash
-   git pull https://github.com/rsinghbhamra1/codin-2.git
+   git pull https://github.com/rsinghbhamra1/codin-3.git
    ```
 
 2. **Build the Docker image**
@@ -42,15 +42,15 @@ Make sure you have:
    Navigate to the project folder and build the Docker image:
 
    ```bash
-   docker build -t bhamra_rupinderjit_coding_assignment12 .
+   docker build -t bhamra_rupinderjit_coding_assignment13 .
    ```
 
 3. **Run the Docker container**
 
-   Run the container on port `8083`:
+   Run the container on port `8018`:
 
    ```bash
-   docker run -d -p 8083:8083 --name coding_assignment12_storybook bhamra_rupinderjit_coding_assignment12:latest
+   docker run -d -p 8018:8018 --name coding_assignment13_storybook bhamra_rupinderjit_coding_assignment13:latest
    ```
 
 4. **Access Storybook**
@@ -58,7 +58,7 @@ Make sure you have:
    Open Storybook in your browser:
 
    ```
-   http://127.0.0.1:8083
+   http://127.0.0.1:8018
    ```
 
    Here, you can view and test all the components.
@@ -68,11 +68,11 @@ Make sure you have:
 To stop the container, run:
 
 ```bash
-docker stop coding_assignment12_storybook
+docker stop coding_assignment13_storybook
 ```
 
 To remove the container after stopping it:
 
 ```bash
-docker rm coding_assignment12_storybook
+docker rm coding_assignment13_storybook
 ```

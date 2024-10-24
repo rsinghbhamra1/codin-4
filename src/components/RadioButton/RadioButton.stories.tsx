@@ -1,28 +1,26 @@
-import { Meta, StoryFn } from '@storybook/react';
-import { RadioButton } from './index';
-import { RadioButtonProps } from './RadioButton.types';
+import { Meta, StoryFn } from "@storybook/react";
+import { RadioButton } from "./index";
+import { RadioButtonProps } from "./RadioButton.types";
 
 export default {
-  title: 'Components/RadioButton',
+  title: "Components/RadioButton",
   component: RadioButton,
   argTypes: {
-    labelText: { control: 'text', defaultValue: 'Radio Button' },
-    textColor: { control: 'color', defaultValue: '#1e3a8a' },
+    labelText: { control: "text", defaultValue: "Radio Button" },
+    textColor: { control: "color", defaultValue: "#1e3a8a" },
   },
 } as Meta<typeof RadioButton>;
 
-const Template: StoryFn<RadioButtonProps> = (args) => (
-  <RadioButton {...args} />
-);
+const Template: StoryFn<RadioButtonProps> = (args) => <RadioButton {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  labelText: 'Default Radio',
+  labelText: "Default Radio",
   disabled: false,
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
-  labelText: 'Disabled Radio',
+  labelText: "Disabled Radio",
   disabled: true,
 };

@@ -1,8 +1,8 @@
-import { render } from '@testing-library/react';
-import { Table, TableHeader, TableRow, TableCell, TableFooter } from './index';
+import { render, screen } from "@testing-library/react";
+import { Table, TableHeader, TableRow, TableCell, TableFooter } from "./index";
 
-test('Table is visible', () => {
-  const { getByText } = render(
+test("Table is visible", () => {
+  render(
     <Table>
       <TableHeader>
         <TableRow>
@@ -22,17 +22,17 @@ test('Table is visible', () => {
           <TableCell>Footer 2</TableCell>
         </TableRow>
       </TableFooter>
-    </Table>
+    </Table>,
   );
 
-  expect(getByText('Header 1')).toBeInTheDocument();
-  expect(getByText('Cell 1')).toBeInTheDocument();
-  expect(getByText('Footer 1')).toBeInTheDocument();
+  expect(screen.getByText("Header 1")).toBeInTheDocument();
+  expect(screen.getByText("Cell 1")).toBeInTheDocument();
+  expect(screen.getByText("Footer 1")).toBeInTheDocument();
 });
 
-test('Table background changes when disabled', () => {
-  const { container } = render(
-    <Table disabled backgroundColor="#ffffff">
+test("Table background changes when disabled", () => {
+  render(
+    <Table disabled backgroundColor="#ffffff" data-testid="table">
       <TableHeader>
         <TableRow>
           <TableCell>Header 1</TableCell>
@@ -51,10 +51,9 @@ test('Table background changes when disabled', () => {
           <TableCell>Footer 2</TableCell>
         </TableRow>
       </TableFooter>
-    </Table>
+    </Table>,
   );
 
-  const tableElement = container.querySelector('table');
-
-  expect(tableElement).toHaveStyle('background-color: darkGray');
+  const tableElement = screen.getByTestId("table");
+  expect(tableElement).toHaveStyle("background-color: rgb(169, 169, 169)");
 });

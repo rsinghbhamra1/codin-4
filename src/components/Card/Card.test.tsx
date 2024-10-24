@@ -1,23 +1,23 @@
-import { render } from '@testing-library/react';
-import { Card } from './index';
+import { render, screen } from "@testing-library/react";
+import { Card } from "./index";
 
-test('Card is visible', () => {
-  const { getByText } = render(
-    <Card cardTitle="Test Title" cardContent="Test Content" />
-  );
-  expect(getByText('Test Title')).toBeInTheDocument();
-  expect(getByText('Test Content')).toBeInTheDocument();
+test("Card is visible", () => {
+  render(<Card cardTitle="Test Title" cardContent="Test Content" />);
+  expect(screen.getByText("Test Title")).toBeInTheDocument();
+  expect(screen.getByText("Test Content")).toBeInTheDocument();
 });
 
-test('Card background changes when disabled', () => {
-  const { getByText } = render(
+test("Card background changes when disabled", () => {
+  render(
     <Card
       cardTitle="Disabled Title"
       cardContent="Disabled Content"
       disabled
       backgroundColor="#ffffff"
-    />
+      data-testid="card"
+    />,
   );
-  const card = getByText('Disabled Title').parentElement;
-  expect(card).toHaveStyle('background-color: #f0f0f0');
+
+  const card = screen.getByTestId("card");
+  expect(card).toHaveStyle("background-color: #f0f0f0");
 });

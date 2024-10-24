@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import { HeroImageProps } from './HeroImage.types';
+import React from "react";
+import styled from "styled-components";
+import { HeroImageProps } from "./HeroImage.types";
 
 interface StyledHeroProps {
   backgroundImage: string;
@@ -8,7 +8,7 @@ interface StyledHeroProps {
 }
 
 const StyledHero = styled.div.withConfig({
-  shouldForwardProp: (prop) => !['backgroundImage', 'disabled'].includes(prop),
+  shouldForwardProp: (prop) => !["backgroundImage", "disabled"].includes(prop),
 })<StyledHeroProps>`
   background-image: url(${(props) => props.backgroundImage});
   background-size: cover;
@@ -18,7 +18,7 @@ const StyledHero = styled.div.withConfig({
   opacity: ${(props) => (props.disabled ? 0.6 : 1)};
   border-radius: 10px;
   overflow: hidden;
-  cursor: ${(props) => (props.disabled ? 'not-allowed' : 'default')};
+  cursor: ${(props) => (props.disabled ? "not-allowed" : "default")};
 `;
 
 const Overlay = styled.div`
@@ -36,19 +36,24 @@ interface HeroContentProps {
 
 const HeroContent = styled.div<HeroContentProps>`
   position: relative;
-  color: ${(props) => props.textColor || '#ffffff'};
+  color: ${(props) => props.textColor || "#ffffff"};
   text-align: center;
   padding: 100px 20px;
 `;
 
 export const HeroImage: React.FC<HeroImageProps> = ({
   backgroundImage,
-  heroText = 'Hero Content',
+  heroText = "Hero Content",
   disabled = false,
   textColor,
+  ...props
 }) => {
   return (
-    <StyledHero backgroundImage={backgroundImage} disabled={disabled}>
+    <StyledHero
+      backgroundImage={backgroundImage}
+      disabled={disabled}
+      {...props}
+    >
       <Overlay />
       <HeroContent textColor={textColor}>{heroText}</HeroContent>
     </StyledHero>

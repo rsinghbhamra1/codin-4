@@ -4,7 +4,7 @@ export interface Option {
 }
 
 export interface DropdownProps
-  extends Omit<React.SelectHTMLAttributes<HTMLSelectElement>, 'disabled'> {
+  extends Omit<React.SelectHTMLAttributes<HTMLSelectElement>, "disabled"> {
   options: Option[];
   disabled?: boolean;
   backgroundColor?: string;

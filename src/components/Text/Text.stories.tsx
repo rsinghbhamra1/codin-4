@@ -1,13 +1,13 @@
-import { Meta, StoryFn } from '@storybook/react';
-import { Text } from './index';
-import { TextProps } from './Text.types';
+import { Meta, StoryFn } from "@storybook/react";
+import { Text } from "./index";
+import { TextProps } from "./Text.types";
 
 export default {
-  title: 'Components/Text',
+  title: "Components/Text",
   component: Text,
   argTypes: {
-    text: { control: 'text', defaultValue: 'Sample Text' },
-    textColor: { control: 'color', defaultValue: '#000000' },
+    text: { control: "text", defaultValue: "Sample Text" },
+    textColor: { control: "color", defaultValue: "#000000" },
   },
 } as Meta<typeof Text>;
 

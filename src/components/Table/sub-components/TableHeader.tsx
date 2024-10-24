@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface TableHeaderProps {
   children: React.ReactNode;
@@ -7,4 +7,3 @@ interface TableHeaderProps {
 export const TableHeader: React.FC<TableHeaderProps> = ({ children }) => {
   return <thead>{children}</thead>;
 };
-

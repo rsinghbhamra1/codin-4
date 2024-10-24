@@ -1,13 +1,13 @@
-import { render } from '@testing-library/react';
-import { Label } from './index';
+import { render, screen } from "@testing-library/react";
+import { Label } from "./index";
 
-test('Label is visible', () => {
-  const { getByText } = render(<Label labelText="Test Label" />);
-  expect(getByText('Test Label')).toBeInTheDocument();
+test("Label is visible", () => {
+  render(<Label labelText="Test Label" />);
+  expect(screen.getByText("Test Label")).toBeInTheDocument();
 });
 
-test('Label color changes when disabled', () => {
-  const { getByText } = render(<Label labelText="Disabled Label" disabled />);
-  const label = getByText('Disabled Label');
-  expect(label).toHaveStyle('color: #a0a0a0');
+test("Label color changes when disabled", () => {
+  render(<Label labelText="Disabled Label" disabled />);
+  const label = screen.getByText("Disabled Label");
+  expect(label).toHaveStyle("color: #a0a0a0");
 });
