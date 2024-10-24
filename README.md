@@ -1,6 +1,8 @@
 # Coding Assignment 13 - UC Component Library 
 
-This project is a **React web component library** built using **Storybook**. It contains reusable UI components that you can easily develop, test, and document. These components are meant to be used in real-world React applications. They are flexible and help keep your projects consistent and easy to maintain. Additionally, this project uses husky to run pre-commit checks.
+This project is a **React web component library** built using **Storybook**. It contains reusable UI components that you can easily develop, test, and document. These components are meant to be used in real-world React applications. They are flexible and help keep your projects consistent and easy to maintain.
+
+To keep the code clean and error-free, the project uses **Husky** for pre-commit checks, running automated checks for code formatting, linting, and testing. It also uses **GitHub Actions** to automatically enforce code quality on every push or pull request.
 
 ## Components Overview
 
@@ -15,6 +17,11 @@ The project includes the following React components:
 7. **RadioButton**: A radio button component for form selections.
 8. **Table**: A table component for displaying data.
 9. **Text**: A basic text component for paragraphs and more.
+
+# Pre-commit Tests
+* Prettier
+* EsLint 
+* Tests 
 
 ## Getting Started
 
@@ -75,4 +82,12 @@ To remove the container after stopping it:
 
 ```bash
 docker rm coding_assignment13_storybook
+```
+
+### Testing Github Pre-Commit
+
+just make a test commit:
+
+```bash
+git commit -m "Husky test commit"
 ```
