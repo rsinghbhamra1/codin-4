@@ -1,31 +1,31 @@
-# Coding Assignment 13 - UC Component Library 
+# Coding Assignment 14 - UC Portfolio Website
 
-This project is a **React web component library** built using **Storybook**. It contains reusable UI components that you can easily develop, test, and document. These components are meant to be used in real-world React applications. They are flexible and help keep your projects consistent and easy to maintain.
+This project is a **React portfolio website** designed to showcase various projects and coursework completed in the program. Built with reusable components, the portfolio is optimized for deployment and can be easily run in a Docker container. The site allows viewers to explore the creator’s skills, projects, and other details relevant to software development.
 
-To keep the code clean and error-free, the project uses **Husky** for pre-commit checks, running automated checks for code formatting, linting, and testing. It also uses **GitHub Actions** to automatically enforce code quality on every push or pull request.
+In addition to the portfolio, the project setup includes **Husky** for pre-commit checks to maintain code quality. **GitHub Actions** also enforce automated checks on each push and pull request to keep the repository clean and error-free.
 
-## Components Overview
+## Portfolio Overview
 
-The project includes the following React components:
+This portfolio includes the following sections:
 
-1. **Button**: A customizable button component.
-2. **Card**: A card layout component to display content.
-3. **Dropdown**: A dropdown menu for selection inputs.
-4. **HeroImage**: A large image component often used in hero sections.
-5. **Img**: A basic image component for displaying images.
-6. **Label**: A label component for forms and other UI elements.
-7. **RadioButton**: A radio button component for form selections.
-8. **Table**: A table component for displaying data.
-9. **Text**: A basic text component for paragraphs and more.
+1. **Basic Information**: A brief introduction with a profile image.
+2. **Projects**: A showcase of selected projects, each with a description, image, and link.
+3. **Skills**: An overview of technical skills and tools used.
+4. **Developer Setup**: Details on preferred development environment and setup.
 
-# Pre-commit Tests
-* Prettier
-* EsLint 
-* Tests 
+The project also includes a set of reusable components from the component library assignment, such as `Button`, `Card`, `Dropdown`, `HeroImage`, `Img`, `Label`, `RadioButton`, `Table`, and `Text`.
+
+# Pre-commit Checks
+
+The project setup includes:
+
+- **Prettier** for code formatting.
+- **ESLint** for linting.
+- **Jest** tests to verify functionality.
 
 ## Getting Started
 
-To get the project running locally on `localhost:8018`, follow the steps below.
+To run the portfolio locally on `localhost:5575`, follow the instructions below.
 
 ### Prerequisites
 
@@ -36,58 +36,48 @@ Make sure you have:
 
 ### Instructions
 
-1. **Clone the repository**
+1. #### Clone the Repository
 
-   Pull the project repository:
+   Clone the project repository:
 
    ```bash
-   git pull https://github.com/rsinghbhamra1/codin-3.git
+   git clone https://github.com/rsinghbhamra1/codin-4.git
    ```
 
-2. **Build the Docker image**
+2. #### Build the Docker Image
 
    Navigate to the project folder and build the Docker image:
 
    ```bash
-   docker build -t bhamra_rupinderjit_coding_assignment13 .
+   docker build -t bhamra_rupinderjit_coding_assignment14 .
    ```
 
-3. **Run the Docker container**
+3. #### Run the Docker Container
 
-   Run the container on port `8018`:
+   Start the container on port 5575:
 
    ```bash
-   docker run -d -p 8018:8018 --name coding_assignment13_storybook bhamra_rupinderjit_coding_assignment13:latest
+   docker run -d -p 5575:5575 --name coding_assignment14_portfolio bhamra_rupinderjit_coding_assignment14:latest
    ```
 
-4. **Access Storybook**
+4. #### Access the Portfolio
 
-   Open Storybook in your browser:
+   Open your browser and navigate to:
 
    ```
-   http://127.0.0.1:8018
+   http://127.0.0.1:5575
    ```
-
-   Here, you can view and test all the components.
+   Here, we can view the portfolio site and explore the components and sections.
 
 ### Stopping the Docker Container
-
 To stop the container, run:
 
 ```bash
-docker stop coding_assignment13_storybook
+docker stop coding_assignment14_portfolio
 ```
 
 To remove the container after stopping it:
 
 ```bash
-docker rm coding_assignment13_storybook
-```
-
-### Testing Github Pre-Commit
-
-just make a test commit:
-
-```bash
-git commit -m "Husky test commit"
+docker rm coding_assignment14_portfolio
 ```

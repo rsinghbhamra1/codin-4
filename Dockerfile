@@ -2,9 +2,9 @@
 FROM node:20-alpine
 
 # Step 2: Set the working directory
-WORKDIR /Bhamra_Rupinderjit_ui_garden_build_checks
+WORKDIR /Bhamra_Rupinderjit_final_site
 
-# Step 3: Copy package.json
+# Step 3: Copy package.json and package-lock.json
 COPY package*.json ./
 
 # Step 4: Install the dependencies
@@ -13,14 +13,14 @@ RUN npm install
 # Step 5: Copy the entire project
 COPY . .
 
-# Step 6: Build the Storybook
-RUN npm run build-storybook
+# Step 6: Build the React app
+RUN npm run build
 
-# Step 7: Install a web server to serve build files
+# Step 7: Install a web server to serve the build files
 RUN npm install -g http-server
 
-# Step 8: Expose the port provided in learn
-EXPOSE 8018
+# Step 8: Expose port 5575
+EXPOSE 5575
 
-# Step 9: Serve the build on port 8018
-CMD ["http-server", "storybook-static", "-p", "8018"]
+# Step 9: Serve the React app on port 5575
+CMD ["http-server", "build", "-p", "5575"]
