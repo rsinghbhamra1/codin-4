@@ -1,7 +1,7 @@
 import React from "react";
 
 interface TableFooterProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export const TableFooter: React.FC<TableFooterProps> = ({ children }) => {

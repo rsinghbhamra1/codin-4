@@ -1,3 +1,5 @@
+// src/components/Card/Card.tsx
+
 import React from "react";
 import styled from "styled-components";
 import { CardProps } from "./Card.types";
@@ -25,6 +27,7 @@ export const Card: React.FC<CardProps> = ({
   disabled = false,
   backgroundColor,
   textColor,
+  children,
   ...props
 }) => {
   return (
@@ -34,8 +37,9 @@ export const Card: React.FC<CardProps> = ({
       textColor={textColor}
       {...props}
     >
-      <h3>{cardTitle}</h3>
+      <h4 style={{ fontWeight: '700', fontSize: '1.5rem'}}>{cardTitle}</h4>
       <p>{cardContent}</p>
+      {children}
     </StyledCard>
   );
 };
