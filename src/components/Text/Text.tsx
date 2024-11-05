@@ -2,7 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { TextProps } from "./Text.types";
 
-const StyledText = styled.span<TextProps>`
+const StyledText = styled.span.withConfig({
+  shouldForwardProp: (prop) => prop !== "textColor" && prop !== "disabled",
+})<TextProps>`
   display: inline-block;
   color: ${({ disabled, textColor }) =>
     disabled ? "#a0a0a0" : textColor || "#000000"};
