@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react";
 import "./App.css";
-import {Button, Text, Label, Card, Img } from './components/index';
+import { Button, Text, Label, Card, Img } from "./components/index";
 
 const App: React.FC = () => {
   // Basic information
   const basicInfo = {
-    name: "Rupinderjit Bhamra", 
-    bio: "A dedicated web development student passionate about full-stack development.", 
-    profileImage: "/profile.png", 
-    college: "Red River College", 
+    name: "Rupinderjit Bhamra",
+    bio: "A dedicated web development student passionate about full-stack development.",
+    profileImage: "/profile.png",
+    college: "Red River College",
   };
 
   // Work section (projects)
@@ -16,7 +16,7 @@ const App: React.FC = () => {
     {
       title: "React Portfolio",
       description: "Portfolio made using React.",
-      image: "/portfolio-business.png", 
+      image: "/portfolio-business.png",
       link: "https://github.com/rsinghbhamra1/codin-4",
       techList: ["React", "TypeScript", "HTML", "CSS"],
     },
@@ -24,8 +24,16 @@ const App: React.FC = () => {
 
   // Skills section
   const skills = {
-    description: "Proficient in modern web development technologies.", 
-    languagesFrameworks: ["JavaScript", "TypeScript", "React", "Node.js", "PHP", "Ruby", "Python"],
+    description: "Proficient in modern web development technologies.",
+    languagesFrameworks: [
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Node.js",
+      "PHP",
+      "Ruby",
+      "Python",
+    ],
     tools: ["Git", "Docker", "Visual Studio Code", "Jest"],
   };
 
@@ -45,7 +53,9 @@ const App: React.FC = () => {
             {/* Name and Bio */}
             <div className="md:w-1/2 text-center md:text-left">
               <h1 className="text-5xl font-bold">{basicInfo.name}</h1>
-              <h2 className="text-2xl font-semibold mt-2">{basicInfo.college}</h2>
+              <h2 className="text-2xl font-semibold mt-2">
+                {basicInfo.college}
+              </h2>
               <p className="mt-4 text-lg">
                 <Text text={basicInfo.bio} textColor="#ffffff" />
               </p>
@@ -97,10 +107,7 @@ const App: React.FC = () => {
                 </a>
                 {/* Technologies Used */}
                 <div className="mt-4">
-                  <Label
-                    labelText="Technologies Used:"
-                    textColor="#ffffff"
-                  />
+                  <Label labelText="Technologies Used:" textColor="#ffffff" />
                   <ul className="list-disc list-inside">
                     {project.techList.map((tech, idx) => (
                       <li key={idx}>
@@ -122,10 +129,7 @@ const App: React.FC = () => {
           </p>
           <div className="grid md:grid-cols-2 gap-6">
             <div>
-              <Label
-                labelText="Languages/Frameworks:"
-                textColor="#ffffff"
-              />
+              <Label labelText="Languages/Frameworks:" textColor="#ffffff" />
               <ul className="list-disc list-inside">
                 {skills.languagesFrameworks.map((lang, index) => (
                   <li key={index}>
@@ -155,32 +159,21 @@ const App: React.FC = () => {
             <div>
               <h3 className="text-2xl font-semibold">VSCode Setup</h3>
               <p className="mt-2">
-                <Text
-                  text={developerSetup.vscodeSetup}
-                  textColor="#ffffff"
-                />
+                <Text text={developerSetup.vscodeSetup} textColor="#ffffff" />
               </p>
             </div>
             {/* Terminal Setup */}
             <div>
               <h3 className="text-2xl font-semibold">Terminal Setup</h3>
               <p className="mt-2">
-                <Text
-                  text={developerSetup.terminalSetup}
-                  textColor="#ffffff"
-                />
+                <Text text={developerSetup.terminalSetup} textColor="#ffffff" />
               </p>
             </div>
             {/* Preferred Editor Font */}
             <div>
-              <h3 className="text-2xl font-semibold">
-                Preferred Editor Font
-              </h3>
+              <h3 className="text-2xl font-semibold">Preferred Editor Font</h3>
               <p className="mt-2">
-                <Text
-                  text={developerSetup.preferredFont}
-                  textColor="#ffffff"
-                />
+                <Text text={developerSetup.preferredFont} textColor="#ffffff" />
               </p>
             </div>
           </div>

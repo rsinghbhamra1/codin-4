@@ -37,7 +37,7 @@ export const Card: React.FC<CardProps> = ({
       textColor={textColor}
       {...props}
     >
-      <h4 style={{ fontWeight: '700', fontSize: '1.5rem'}}>{cardTitle}</h4>
+      <h4 style={{ fontWeight: "700", fontSize: "1.5rem" }}>{cardTitle}</h4>
       <p>{cardContent}</p>
       {children}
     </StyledCard>
