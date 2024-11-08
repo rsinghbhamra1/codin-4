@@ -20,6 +20,13 @@ const App: React.FC = () => {
       link: "https://github.com/rsinghbhamra1/codin-4",
       techList: ["React", "TypeScript", "HTML", "CSS"],
     },
+    {
+      title: "EvoVault",
+      description: "Front-end Website made using HTML, CSS and Javascript.",
+      image: "/portfolio2-business.png",
+      link: "https://evo-vault.vercel.app/",
+      techList: ["HTML", "CSS", "Javascript"],
+    },
   ];
 
   // Skills section
