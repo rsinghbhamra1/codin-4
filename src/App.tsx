@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import { Button, Text, Label, Card, Img } from "./components/index";
+import Navbar from "./portfolio-components/Navbar";
 
 const App: React.FC = () => {
   // Basic information
@@ -53,9 +54,10 @@ const App: React.FC = () => {
 
   return (
     <div className="bg-gray-900 text-white min-h-screen font-sans">
+      <Navbar />
       <div className="container mx-auto p-6">
         {/* Basic Information Section */}
-        <section className="mb-12 h-screen flex items-center">
+        <section id="basicInfo" className="mb-12 h-screen flex items-center">
           <div className="flex flex-col md:flex-row items-center md:justify-between w-full">
             {/* Name and Bio */}
             <div className="md:w-1/2 text-center md:text-left">
@@ -81,7 +83,7 @@ const App: React.FC = () => {
         </section>
 
         {/* Work Section */}
-        <section className="mb-12">
+        <section id="work" className="mb-12">
           <h2 className="text-3xl font-semibold mb-6">Work</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {projects.map((project, index) => (
@@ -129,7 +131,10 @@ const App: React.FC = () => {
         </section>
 
         {/* Skills Section */}
-        <section className="mb-12">
+        <section
+          id="skills"
+          className="mb-12 h-screen flex flex-col justify-center"
+        >
           <h2 className="text-3xl font-semibold mb-6">Skills</h2>
           <p className="text-lg mb-4">
             <Text text={skills.description} textColor="#ffffff" />
@@ -159,7 +164,10 @@ const App: React.FC = () => {
         </section>
 
         {/* Developer Setup Section */}
-        <section className="mb-12">
+        <section
+          id="developerSetup"
+          className="mb-12 h-screen flex flex-col justify-center"
+        >
           <h2 className="text-3xl font-semibold mb-6">Developer Setup</h2>
           <div className="space-y-4">
             {/* VSCode Setup */}

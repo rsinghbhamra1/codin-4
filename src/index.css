@@ -34,3 +34,7 @@ h1, h2, h3, h4 {
   background-color: #c0c0c0; 
   background-color: #0073cc;
 }
+
+html {
+  scroll-behavior: smooth;
+}
